@@ -513,7 +513,7 @@ static void _epg_channel_timer_callback ( void *p )
   while ((ebc = RB_FIRST(&ch->ch_epg_schedule))) {
 
     /* Expire */
-    if ( ebc->stop <= gclk() ) {
+    if (ebc->stop <= gclk() - ch->ch_epg_keep * 3600 * 24) {
       tvhdebug(LS_EPG, "expire event %u (%s) from %s",
                ebc->id, epg_broadcast_get_title(ebc, NULL),
                channel_get_name(ch, channel_blank_name));

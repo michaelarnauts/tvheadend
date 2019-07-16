@@ -494,6 +494,16 @@ const idclass_t channel_class = {
       .opts     = PO_ADVANCED,
     },
     {
+      .type     = PT_U32,
+      .id       = "epgkeep",
+      .name     = N_("Keep historic EPG (days)"),
+      .desc     = N_("Keep historic EPG data for a specified amount "
+                   "of days after airing."),
+      .def.i    = 1,
+      .off      = offsetof(channel_t, ch_epg_keep),
+      .opts     = PO_ADVANCED,
+    },
+    {
       .type     = PT_STR,
       .islist   = 1,
       .id       = "epggrab",

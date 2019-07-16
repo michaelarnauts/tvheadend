@@ -74,6 +74,7 @@ typedef struct channel
   gtimer_t              ch_epg_timer_head;
   gtimer_t              ch_epg_timer_current;
   uint32_t              ch_epg_limit;
+  uint32_t              ch_epg_keep;
 
   int                   ch_epgauto;
   idnode_list_head_t    ch_epggrab;                /* 1 = epggrab channel, 2 = channel */
